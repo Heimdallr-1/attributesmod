@@ -23,6 +23,12 @@ public class AttributesMod {
 			1024.0
 	).setTracked(true);
 
+	public static final Identifier MAGIC_DAMAGE_ID
+			= AttributesMod.createAttributeIdentifier("player", "magic_damage");
+	public static final EntityAttribute MAGIC_DAMAGE = createDynamicAttribute(
+			MAGIC_DAMAGE_ID
+	).setTracked(true);
+
 	public static final Identifier MELEE_DAMAGE_ID
 			= AttributesMod.createAttributeIdentifier("player", "melee_damage");
 	public static final EntityAttribute MELEE_DAMAGE = createDynamicAttribute(
@@ -101,8 +107,21 @@ public class AttributesMod {
 			REPAIR_COST_ID
 	).setTracked(true);
 
+	public static final Identifier ARMOR_SHRED_ID
+			= AttributesMod.createAttributeIdentifier("player", "armor_shred");
+	public static final EntityAttribute ARMOR_SHRED = createDynamicAttribute(
+			ARMOR_SHRED_ID
+	).setTracked(true);
+
+	public static final Identifier TOUGHNESS_SHRED_ID
+			= AttributesMod.createAttributeIdentifier("player", "toughness_shred");
+	public static final EntityAttribute TOUGHNESS_SHRED = createDynamicAttribute(
+			TOUGHNESS_SHRED_ID
+	).setTracked(true);
+
 	public static void setup(Registrar registrar) {
 		registrar.register(Registry.ATTRIBUTE, STAMINA_ID, STAMINA);
+		registrar.register(Registry.ATTRIBUTE, MAGIC_DAMAGE_ID, MAGIC_DAMAGE);
 		registrar.register(Registry.ATTRIBUTE, MELEE_DAMAGE_ID, MELEE_DAMAGE);
 		registrar.register(Registry.ATTRIBUTE, RANGED_DAMAGE_ID, RANGED_DAMAGE);
 		registrar.register(Registry.ATTRIBUTE, FORTUNE_ID, FORTUNE);
@@ -116,6 +135,8 @@ public class AttributesMod {
 		registrar.register(Registry.ATTRIBUTE, SPRINTING_SPEED_ID, SPRINTING_SPEED);
 		registrar.register(Registry.ATTRIBUTE, KNOCKBACK_ID, KNOCKBACK);
 		registrar.register(Registry.ATTRIBUTE, REPAIR_COST_ID, REPAIR_COST);
+		registrar.register(Registry.ATTRIBUTE, ARMOR_SHRED_ID, ARMOR_SHRED);
+		registrar.register(Registry.ATTRIBUTE, TOUGHNESS_SHRED_ID, TOUGHNESS_SHRED);
 	}
 
 	public static Identifier createIdentifier(String path) {
