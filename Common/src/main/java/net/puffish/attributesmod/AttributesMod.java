@@ -65,6 +65,24 @@ public class AttributesMod {
 			RESISTANCE_ID
 	).setTracked(true);
 
+	public static final Identifier MAGIC_RESISTANCE_ID
+			= AttributesMod.createAttributeIdentifier("player", "magic_resistance");
+	public static final EntityAttribute MAGIC_RESISTANCE = createDynamicAttribute(
+			MAGIC_RESISTANCE_ID
+	).setTracked(true);
+
+	public static final Identifier MELEE_RESISTANCE_ID
+			= AttributesMod.createAttributeIdentifier("player", "melee_resistance");
+	public static final EntityAttribute MELEE_RESISTANCE = createDynamicAttribute(
+			MELEE_RESISTANCE_ID
+	).setTracked(true);
+
+	public static final Identifier RANGED_RESISTANCE_ID
+			= AttributesMod.createAttributeIdentifier("player", "ranged_resistance");
+	public static final EntityAttribute RANGED_RESISTANCE = createDynamicAttribute(
+			RANGED_RESISTANCE_ID
+	).setTracked(true);
+
 	public static final Identifier MINING_SPEED_ID
 			= AttributesMod.createAttributeIdentifier("player", "mining_speed");
 	public static final EntityAttribute MINING_SPEED = createDynamicAttribute(
@@ -128,6 +146,9 @@ public class AttributesMod {
 		registrar.register(Registries.ATTRIBUTE, HEALING_ID, HEALING);
 		registrar.register(Registries.ATTRIBUTE, JUMP_ID, JUMP);
 		registrar.register(Registries.ATTRIBUTE, RESISTANCE_ID, RESISTANCE);
+		registrar.register(Registries.ATTRIBUTE, MAGIC_RESISTANCE_ID, MAGIC_RESISTANCE);
+		registrar.register(Registries.ATTRIBUTE, MELEE_RESISTANCE_ID, MELEE_RESISTANCE);
+		registrar.register(Registries.ATTRIBUTE, RANGED_RESISTANCE_ID, RANGED_RESISTANCE);
 		registrar.register(Registries.ATTRIBUTE, MINING_SPEED_ID, MINING_SPEED);
 		registrar.register(Registries.ATTRIBUTE, PICKAXE_SPEED_ID, PICKAXE_SPEED);
 		registrar.register(Registries.ATTRIBUTE, AXE_SPEED_ID, AXE_SPEED);
