@@ -137,6 +137,12 @@ public class AttributesMod {
 			TOUGHNESS_SHRED_ID
 	).setTracked(true);
 
+	public static final Identifier PROTECTION_SHRED_ID
+			= AttributesMod.createAttributeIdentifier("player", "protection_shred");
+	public static final EntityAttribute PROTECTION_SHRED = createDynamicAttribute(
+			PROTECTION_SHRED_ID
+	).setTracked(true);
+
 	public static void setup(Registrar registrar) {
 		registrar.register(Registries.ATTRIBUTE, STAMINA_ID, STAMINA);
 		registrar.register(Registries.ATTRIBUTE, MAGIC_DAMAGE_ID, MAGIC_DAMAGE);
@@ -158,6 +164,7 @@ public class AttributesMod {
 		registrar.register(Registries.ATTRIBUTE, REPAIR_COST_ID, REPAIR_COST);
 		registrar.register(Registries.ATTRIBUTE, ARMOR_SHRED_ID, ARMOR_SHRED);
 		registrar.register(Registries.ATTRIBUTE, TOUGHNESS_SHRED_ID, TOUGHNESS_SHRED);
+		registrar.register(Registries.ATTRIBUTE, PROTECTION_SHRED_ID, PROTECTION_SHRED);
 	}
 
 	public static Identifier createIdentifier(String path) {
