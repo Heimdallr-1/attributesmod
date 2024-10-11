@@ -5,9 +5,9 @@ import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.ProjectileDamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.puffish.attributesmod.AttributesMod;
+import net.puffish.attributesmod.util.DamageKind;
 import net.puffish.attributesmod.util.Sign;
 import net.puffish.attributesmod.util.Signed;
 import org.spongepowered.asm.mixin.Mixin;
@@ -35,13 +35,14 @@ public abstract class LivingEntityMixin {
 		if (source.getAttacker() instanceof PlayerEntity player) {
 			var attributes = new ArrayList<Signed<EntityAttributeInstance>>();
 
-			if (source.isMagic()) {
+			var kind = DamageKind.of(source);
+			if (kind.isMagic()) {
 				attributes.add(Sign.POSITIVE.wrap(player.getAttributeInstance(AttributesMod.MAGIC_DAMAGE)));
 			}
-
-			if (source instanceof ProjectileDamageSource) {
+			if (kind.isProjectile()) {
 				attributes.add(Sign.POSITIVE.wrap(player.getAttributeInstance(AttributesMod.RANGED_DAMAGE)));
-			} else {
+			}
+			if (kind.isMelee()) {
 				attributes.add(Sign.POSITIVE.wrap(player.getAttributeInstance(AttributesMod.MELEE_DAMAGE)));
 			}
 
@@ -161,14 +162,14 @@ public abstract class LivingEntityMixin {
 			var attributes = new ArrayList<Signed<EntityAttributeInstance>>();
 
 			attributes.add(Sign.NEGATIVE.wrap(player.getAttributeInstance(AttributesMod.RESISTANCE)));
-
-			if (source.isOf(DamageTypes.MAGIC)) {
+			var kind = DamageKind.of(source);
+			if (kind.isMagic()) {
 				attributes.add(Sign.NEGATIVE.wrap(player.getAttributeInstance(AttributesMod.MAGIC_RESISTANCE)));
 			}
-
-			if (source.isIn(DamageTypeTags.IS_PROJECTILE)) {
-				attributes.add(Sign.NEGATIVE.wrap(player.getAttributeInstance(AttributesMod.MAGIC_RESISTANCE)));
-			} else {
+			if (kind.isProjectile()) {
+				attributes.add(Sign.NEGATIVE.wrap(player.getAttributeInstance(AttributesMod.RANGED_RESISTANCE)));
+			}
+			if (kind.isMelee()) {
 				attributes.add(Sign.NEGATIVE.wrap(player.getAttributeInstance(AttributesMod.MELEE_RESISTANCE)));
 			}
 
