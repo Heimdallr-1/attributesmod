@@ -143,6 +143,12 @@ public class AttributesMod {
 			PROTECTION_SHRED_ID
 	).setTracked(true);
 
+	public static final Identifier NATURAL_REGENERATION_ID
+			= AttributesMod.createAttributeIdentifier("player", "natural_regeneration");
+	public static final EntityAttribute NATURAL_REGENERATION = createDynamicAttribute(
+			NATURAL_REGENERATION_ID
+	).setTracked(true);
+
 	public static void setup(Registrar registrar) {
 		registrar.register(Registries.ATTRIBUTE, STAMINA_ID, STAMINA);
 		registrar.register(Registries.ATTRIBUTE, MAGIC_DAMAGE_ID, MAGIC_DAMAGE);
@@ -165,6 +171,7 @@ public class AttributesMod {
 		registrar.register(Registries.ATTRIBUTE, ARMOR_SHRED_ID, ARMOR_SHRED);
 		registrar.register(Registries.ATTRIBUTE, TOUGHNESS_SHRED_ID, TOUGHNESS_SHRED);
 		registrar.register(Registries.ATTRIBUTE, PROTECTION_SHRED_ID, PROTECTION_SHRED);
+		registrar.register(Registries.ATTRIBUTE, NATURAL_REGENERATION_ID, NATURAL_REGENERATION);
 	}
 
 	public static Identifier createIdentifier(String path) {
