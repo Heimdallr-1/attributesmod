@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 import java.util.ArrayList;
 
-@Mixin(LivingEntity.class)
+@Mixin(value = LivingEntity.class, priority = 900)
 public abstract class LivingEntityMixin {
 
 	@SuppressWarnings("unchecked")
