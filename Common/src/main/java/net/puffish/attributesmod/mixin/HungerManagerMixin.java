@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
-@Mixin(HungerManager.class)
+@Mixin(value = HungerManager.class, priority = 900)
 public abstract class HungerManagerMixin {
 
 	@ModifyArg(
