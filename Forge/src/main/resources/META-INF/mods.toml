@@ -12,7 +12,7 @@ description="Adds more attributes to the game."
 [[dependencies.puffish_attributes]]
 modId="forge"
 mandatory=true
-versionRange="[40,)"
+versionRange="[40.2.21,)"
 
 [[dependencies.puffish_attributes]]
 modId="minecraft"
