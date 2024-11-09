@@ -1,6 +1,7 @@
 package net.puffish.attributesmod.mixin;
 
-import com.llamalad7.mixinextras.sugar.Local;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.entity.player.HungerManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.puffish.attributesmod.AttributesMod;
@@ -9,25 +10,23 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
-@Mixin(value = HungerManager.class, priority = 900)
+@Mixin(value = HungerManager.class, priority = 1100)
 public abstract class HungerManagerMixin {
 
-	@ModifyArg(
+	@WrapOperation(
 			method = "update",
 			at = @At(
 					value = "INVOKE",
 					target = "Lnet/minecraft/entity/player/PlayerEntity;heal(F)V"
-			),
-			index = 0
+			)
 	)
-	private float modifyArgAtHeal(float amount, @Local(argsOnly = true) PlayerEntity player) {
-		return Math.max(0.0f, (float) AttributesMod.applyAttributeModifiers(
+	private void wrapOperationAtHeal(PlayerEntity player, float amount, Operation<Void> operation) {
+		operation.call(player, Math.max(0.0f, (float) AttributesMod.applyAttributeModifiers(
 				amount,
 				Sign.POSITIVE.wrap(player.getAttributeInstance(AttributesMod.NATURAL_REGENERATION))
-		));
+		)));
 	}
 
 	@ModifyConstant(
