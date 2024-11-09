@@ -72,7 +72,7 @@ public abstract class LivingEntityMixin {
 			));
 		}
 
-		return operation.call(damage, armor, toughness);
+		return operation.call(entity, damage, source, armor, toughness);
 	}
 
 	@WrapOperation(
