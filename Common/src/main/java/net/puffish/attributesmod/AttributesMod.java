@@ -15,7 +15,7 @@ public class AttributesMod {
 	public static final String MOD_ID = "puffish_attributes";
 
 	public static final Identifier STAMINA_ID
-			= AttributesMod.createAttributeIdentifier("player", "stamina");
+			= AttributesMod.createIdentifier("stamina");
 	public static final EntityAttribute STAMINA = createClampedAttribute(
 			STAMINA_ID,
 			4.0,
@@ -24,162 +24,158 @@ public class AttributesMod {
 	).setTracked(true);
 
 	public static final Identifier MAGIC_DAMAGE_ID
-			= AttributesMod.createAttributeIdentifier("player", "magic_damage");
+			= AttributesMod.createIdentifier("magic_damage");
 	public static final EntityAttribute MAGIC_DAMAGE = createDynamicAttribute(
 			MAGIC_DAMAGE_ID
 	).setTracked(true);
 
 	public static final Identifier MELEE_DAMAGE_ID
-			= AttributesMod.createAttributeIdentifier("player", "melee_damage");
+			= AttributesMod.createIdentifier("melee_damage");
 	public static final EntityAttribute MELEE_DAMAGE = createDynamicAttribute(
 			MELEE_DAMAGE_ID
 	).setTracked(true);
 
 	public static final Identifier RANGED_DAMAGE_ID
-			= AttributesMod.createAttributeIdentifier("player", "ranged_damage");
+			= AttributesMod.createIdentifier("ranged_damage");
 	public static final EntityAttribute RANGED_DAMAGE = createDynamicAttribute(
 			RANGED_DAMAGE_ID
 	).setTracked(true);
 
 	public static final Identifier FORTUNE_ID
-			= AttributesMod.createAttributeIdentifier("player", "fortune");
+			= AttributesMod.createIdentifier("fortune");
 	public static final EntityAttribute FORTUNE = createDynamicAttribute(
 			FORTUNE_ID
 	).setTracked(true);
 
 	public static final Identifier HEALING_ID
-			= AttributesMod.createAttributeIdentifier("player", "healing");
+			= AttributesMod.createIdentifier("healing");
 	public static final EntityAttribute HEALING = createDynamicAttribute(
 			HEALING_ID
 	).setTracked(true);
 
 	public static final Identifier JUMP_ID
-			= AttributesMod.createAttributeIdentifier("player", "jump");
+			= AttributesMod.createIdentifier("jump");
 	public static final EntityAttribute JUMP = createDynamicAttribute(
 			JUMP_ID
 	).setTracked(true);
 
 	public static final Identifier RESISTANCE_ID
-			= AttributesMod.createAttributeIdentifier("player", "resistance");
+			= AttributesMod.createIdentifier("resistance");
 	public static final EntityAttribute RESISTANCE = createDynamicAttribute(
 			RESISTANCE_ID
 	).setTracked(true);
 
 	public static final Identifier MAGIC_RESISTANCE_ID
-			= AttributesMod.createAttributeIdentifier("player", "magic_resistance");
+			= AttributesMod.createIdentifier("magic_resistance");
 	public static final EntityAttribute MAGIC_RESISTANCE = createDynamicAttribute(
 			MAGIC_RESISTANCE_ID
 	).setTracked(true);
 
 	public static final Identifier MELEE_RESISTANCE_ID
-			= AttributesMod.createAttributeIdentifier("player", "melee_resistance");
+			= AttributesMod.createIdentifier("melee_resistance");
 	public static final EntityAttribute MELEE_RESISTANCE = createDynamicAttribute(
 			MELEE_RESISTANCE_ID
 	).setTracked(true);
 
 	public static final Identifier RANGED_RESISTANCE_ID
-			= AttributesMod.createAttributeIdentifier("player", "ranged_resistance");
+			= AttributesMod.createIdentifier("ranged_resistance");
 	public static final EntityAttribute RANGED_RESISTANCE = createDynamicAttribute(
 			RANGED_RESISTANCE_ID
 	).setTracked(true);
 
 	public static final Identifier MINING_SPEED_ID
-			= AttributesMod.createAttributeIdentifier("player", "mining_speed");
+			= AttributesMod.createIdentifier("mining_speed");
 	public static final EntityAttribute MINING_SPEED = createDynamicAttribute(
 			MINING_SPEED_ID
 	).setTracked(true);
 
 	public static final Identifier PICKAXE_SPEED_ID
-			= AttributesMod.createAttributeIdentifier("player", "pickaxe_speed");
+			= AttributesMod.createIdentifier("pickaxe_speed");
 	public static final EntityAttribute PICKAXE_SPEED = createDynamicAttribute(
 			PICKAXE_SPEED_ID
 	).setTracked(true);
 
 	public static final Identifier AXE_SPEED_ID
-			= AttributesMod.createAttributeIdentifier("player", "axe_speed");
+			= AttributesMod.createIdentifier("axe_speed");
 	public static final EntityAttribute AXE_SPEED = createDynamicAttribute(
 			AXE_SPEED_ID
 	).setTracked(true);
 
 	public static final Identifier SHOVEL_SPEED_ID
-			= AttributesMod.createAttributeIdentifier("player", "shovel_speed");
+			= AttributesMod.createIdentifier("shovel_speed");
 	public static final EntityAttribute SHOVEL_SPEED = createDynamicAttribute(
 			SHOVEL_SPEED_ID
 	).setTracked(true);
 
 	public static final Identifier SPRINTING_SPEED_ID
-			= AttributesMod.createAttributeIdentifier("player", "sprinting_speed");
+			= AttributesMod.createIdentifier("sprinting_speed");
 	public static final EntityAttribute SPRINTING_SPEED = createDynamicAttribute(
 			SPRINTING_SPEED_ID
 	).setTracked(true);
 
 	public static final Identifier KNOCKBACK_ID
-			= AttributesMod.createAttributeIdentifier("player", "knockback");
+			= AttributesMod.createIdentifier("knockback");
 	public static final EntityAttribute KNOCKBACK = createDynamicAttribute(
 			KNOCKBACK_ID
 	).setTracked(true);
 
 	public static final Identifier REPAIR_COST_ID
-			= AttributesMod.createAttributeIdentifier("player", "repair_cost");
+			= AttributesMod.createIdentifier("repair_cost");
 	public static final EntityAttribute REPAIR_COST = createDynamicAttribute(
 			REPAIR_COST_ID
 	).setTracked(true);
 
 	public static final Identifier ARMOR_SHRED_ID
-			= AttributesMod.createAttributeIdentifier("player", "armor_shred");
+			= AttributesMod.createIdentifier("armor_shred");
 	public static final EntityAttribute ARMOR_SHRED = createDynamicAttribute(
 			ARMOR_SHRED_ID
 	).setTracked(true);
 
 	public static final Identifier TOUGHNESS_SHRED_ID
-			= AttributesMod.createAttributeIdentifier("player", "toughness_shred");
+			= AttributesMod.createIdentifier("toughness_shred");
 	public static final EntityAttribute TOUGHNESS_SHRED = createDynamicAttribute(
 			TOUGHNESS_SHRED_ID
 	).setTracked(true);
 
 	public static final Identifier PROTECTION_SHRED_ID
-			= AttributesMod.createAttributeIdentifier("player", "protection_shred");
+			= AttributesMod.createIdentifier("protection_shred");
 	public static final EntityAttribute PROTECTION_SHRED = createDynamicAttribute(
 			PROTECTION_SHRED_ID
 	).setTracked(true);
 
 	public static final Identifier NATURAL_REGENERATION_ID
-			= AttributesMod.createAttributeIdentifier("player", "natural_regeneration");
+			= AttributesMod.createIdentifier("natural_regeneration");
 	public static final EntityAttribute NATURAL_REGENERATION = createDynamicAttribute(
 			NATURAL_REGENERATION_ID
 	).setTracked(true);
 
 	public static void setup(Registrar registrar) {
-		registrar.register(Registries.ATTRIBUTE, STAMINA_ID, STAMINA);
-		registrar.register(Registries.ATTRIBUTE, MAGIC_DAMAGE_ID, MAGIC_DAMAGE);
-		registrar.register(Registries.ATTRIBUTE, MELEE_DAMAGE_ID, MELEE_DAMAGE);
-		registrar.register(Registries.ATTRIBUTE, RANGED_DAMAGE_ID, RANGED_DAMAGE);
-		registrar.register(Registries.ATTRIBUTE, FORTUNE_ID, FORTUNE);
-		registrar.register(Registries.ATTRIBUTE, HEALING_ID, HEALING);
-		registrar.register(Registries.ATTRIBUTE, JUMP_ID, JUMP);
-		registrar.register(Registries.ATTRIBUTE, RESISTANCE_ID, RESISTANCE);
-		registrar.register(Registries.ATTRIBUTE, MAGIC_RESISTANCE_ID, MAGIC_RESISTANCE);
-		registrar.register(Registries.ATTRIBUTE, MELEE_RESISTANCE_ID, MELEE_RESISTANCE);
-		registrar.register(Registries.ATTRIBUTE, RANGED_RESISTANCE_ID, RANGED_RESISTANCE);
-		registrar.register(Registries.ATTRIBUTE, MINING_SPEED_ID, MINING_SPEED);
-		registrar.register(Registries.ATTRIBUTE, PICKAXE_SPEED_ID, PICKAXE_SPEED);
-		registrar.register(Registries.ATTRIBUTE, AXE_SPEED_ID, AXE_SPEED);
-		registrar.register(Registries.ATTRIBUTE, SHOVEL_SPEED_ID, SHOVEL_SPEED);
-		registrar.register(Registries.ATTRIBUTE, SPRINTING_SPEED_ID, SPRINTING_SPEED);
-		registrar.register(Registries.ATTRIBUTE, KNOCKBACK_ID, KNOCKBACK);
-		registrar.register(Registries.ATTRIBUTE, REPAIR_COST_ID, REPAIR_COST);
-		registrar.register(Registries.ATTRIBUTE, ARMOR_SHRED_ID, ARMOR_SHRED);
-		registrar.register(Registries.ATTRIBUTE, TOUGHNESS_SHRED_ID, TOUGHNESS_SHRED);
-		registrar.register(Registries.ATTRIBUTE, PROTECTION_SHRED_ID, PROTECTION_SHRED);
-		registrar.register(Registries.ATTRIBUTE, NATURAL_REGENERATION_ID, NATURAL_REGENERATION);
+		registerAttribute(registrar, STAMINA_ID, STAMINA);
+		registerAttribute(registrar, MAGIC_DAMAGE_ID, MAGIC_DAMAGE);
+		registerAttribute(registrar, MELEE_DAMAGE_ID, MELEE_DAMAGE);
+		registerAttribute(registrar, RANGED_DAMAGE_ID, RANGED_DAMAGE);
+		registerAttribute(registrar, FORTUNE_ID, FORTUNE);
+		registerAttribute(registrar, HEALING_ID, HEALING);
+		registerAttribute(registrar, JUMP_ID, JUMP);
+		registerAttribute(registrar, RESISTANCE_ID, RESISTANCE);
+		registerAttribute(registrar, MAGIC_RESISTANCE_ID, MAGIC_RESISTANCE);
+		registerAttribute(registrar, MELEE_RESISTANCE_ID, MELEE_RESISTANCE);
+		registerAttribute(registrar, RANGED_RESISTANCE_ID, RANGED_RESISTANCE);
+		registerAttribute(registrar, MINING_SPEED_ID, MINING_SPEED);
+		registerAttribute(registrar, PICKAXE_SPEED_ID, PICKAXE_SPEED);
+		registerAttribute(registrar, AXE_SPEED_ID, AXE_SPEED);
+		registerAttribute(registrar, SHOVEL_SPEED_ID, SHOVEL_SPEED);
+		registerAttribute(registrar, SPRINTING_SPEED_ID, SPRINTING_SPEED);
+		registerAttribute(registrar, KNOCKBACK_ID, KNOCKBACK);
+		registerAttribute(registrar, REPAIR_COST_ID, REPAIR_COST);
+		registerAttribute(registrar, ARMOR_SHRED_ID, ARMOR_SHRED);
+		registerAttribute(registrar, TOUGHNESS_SHRED_ID, TOUGHNESS_SHRED);
+		registerAttribute(registrar, PROTECTION_SHRED_ID, PROTECTION_SHRED);
+		registerAttribute(registrar, NATURAL_REGENERATION_ID, NATURAL_REGENERATION);
 	}
 
 	public static Identifier createIdentifier(String path) {
 		return new Identifier(MOD_ID, path);
-	}
-
-	public static Identifier createAttributeIdentifier(String type, String name) {
-		return createIdentifier(type + "." + name);
 	}
 
 	public static EntityAttribute createClampedAttribute(Identifier id, double fallback, double min, double max) {
@@ -240,6 +236,11 @@ public class AttributesMod {
 			result = signedAttribute.value().getAttribute().clamp(result);
 		}
 		return result;
+	}
+
+	private static void registerAttribute(Registrar registrar, Identifier id, EntityAttribute attribute) {
+		registrar.register(Registries.ATTRIBUTE, id, attribute);
+		registrar.registerAlias(Registries.ATTRIBUTE, new Identifier(id.getNamespace(), "player." + id.getPath()), id);
 	}
 
 }
