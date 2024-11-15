@@ -11,7 +11,9 @@
 		"HungerManagerMixin",
 		"LivingEntityMixin",
 		"PlayerEntityMixin",
-		"PlayerInventoryMixin"
+		"PlayerInventoryMixin",
+		"SimpleRegistryAccessor",
+		"SimpleRegistryMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

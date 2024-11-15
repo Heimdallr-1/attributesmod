@@ -15,4 +15,9 @@ public class NeoForgePlatform implements Platform {
 		return deferredRegister.register(id.getPath(), () -> entry).getDelegate();
 	}
 
+	@Override
+	public <T> void registerAlias(Registry<T> registry, Identifier aliasId, Identifier id) {
+		NeoForgeMain.REGISTRY_ALIASES.add(new NeoForgeMain.RegistryAlias<>(registry, aliasId, id));
+	}
+
 }
