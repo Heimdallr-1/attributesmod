@@ -5,4 +5,5 @@ import net.minecraft.util.registry.Registry;
 
 public interface Registrar {
 	<V, T extends V> void register(Registry<V> registry, Identifier id, T entry);
+	<V> void registerAlias(Registry<V> registry, Identifier aliasId, Identifier id);
 }
