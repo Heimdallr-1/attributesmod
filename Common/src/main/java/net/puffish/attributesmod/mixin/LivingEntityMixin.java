@@ -8,6 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.puffish.attributesmod.AttributesMod;
 import net.puffish.attributesmod.util.DamageKind;
 import net.puffish.attributesmod.util.Sign;
@@ -28,7 +29,7 @@ public abstract class LivingEntityMixin {
 			argsOnly = true,
 			ordinal = 0
 	)
-	private float modifyVariableAtDamage(float damage, DamageSource source) {
+	private float modifyVariableAtDamage(float damage, ServerWorld world, DamageSource source) {
 		if (damage < 0) {
 			return damage;
 		}
