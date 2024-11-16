@@ -27,6 +27,11 @@ dependencies {
 
 	neoForge("net.neoforged:neoforge:${project.properties["neoforge_version"]}")
 
+	compileOnly("io.github.llamalad7:mixinextras-common:${project.properties["mixinextras_version"]}")
+	annotationProcessor("io.github.llamalad7:mixinextras-common:${project.properties["mixinextras_version"]}")
+	implementation("io.github.llamalad7:mixinextras-neoforge:${project.properties["mixinextras_version"]}")
+	include("io.github.llamalad7:mixinextras-neoforge:${project.properties["mixinextras_version"]}")
+
 	implementation(project(path = ":Common", configuration = "namedElements"))
 }
 
