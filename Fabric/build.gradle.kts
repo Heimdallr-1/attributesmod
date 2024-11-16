@@ -21,6 +21,11 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}")
 
+    compileOnly("io.github.llamalad7:mixinextras-common:${project.properties["mixinextras_version"]}")
+    annotationProcessor("io.github.llamalad7:mixinextras-common:${project.properties["mixinextras_version"]}")
+    implementation("io.github.llamalad7:mixinextras-fabric:${project.properties["mixinextras_version"]}")
+    include("io.github.llamalad7:mixinextras-fabric:${project.properties["mixinextras_version"]}")
+
     implementation(project(path = ":Common", configuration = "namedElements"))
 }
 

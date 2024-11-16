@@ -12,29 +12,17 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = PlayerEntity.class, priority = 900)
+@Mixin(value = PlayerEntity.class, priority = 1100)
 public abstract class PlayerEntityMixin {
 
 	private static final double VANILLA_KNOCKBACK = 0.4;
 
-	@Inject(method = "createPlayerAttributes", at = @At("RETURN"))
-	private static void injectAtCreatePlayerAttributes(
-			CallbackInfoReturnable<DefaultAttributeContainer.Builder> cir
-	) {
-		cir.getReturnValue()
+	@ModifyReturnValue(method = "createPlayerAttributes", at = @At("RETURN"))
+	private static DefaultAttributeContainer.Builder modifyReturnValueAtCreatePlayerAttributes(DefaultAttributeContainer.Builder builder) {
+		return builder
 				.add(AttributesMod.STAMINA)
 				.add(AttributesMod.FORTUNE)
-				.add(AttributesMod.MAGIC_DAMAGE)
-				.add(AttributesMod.MELEE_DAMAGE)
-				.add(AttributesMod.RANGED_DAMAGE)
-				.add(AttributesMod.HEALING)
-				.add(AttributesMod.JUMP)
-				.add(AttributesMod.RESISTANCE)
-				.add(AttributesMod.MAGIC_RESISTANCE)
-				.add(AttributesMod.MELEE_RESISTANCE)
-				.add(AttributesMod.RANGED_RESISTANCE)
 				.add(AttributesMod.MINING_SPEED)
 				.add(AttributesMod.PICKAXE_SPEED)
 				.add(AttributesMod.AXE_SPEED)
@@ -42,9 +30,6 @@ public abstract class PlayerEntityMixin {
 				.add(AttributesMod.SPRINTING_SPEED)
 				.add(AttributesMod.KNOCKBACK)
 				.add(AttributesMod.REPAIR_COST)
-				.add(AttributesMod.ARMOR_SHRED)
-				.add(AttributesMod.TOUGHNESS_SHRED)
-				.add(AttributesMod.PROTECTION_SHRED)
 				.add(AttributesMod.NATURAL_REGENERATION);
 	}
 
