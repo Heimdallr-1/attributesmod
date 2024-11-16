@@ -199,6 +199,9 @@ public class AttributesMod {
 			Signed<EntityAttributeInstance>... attributes
 	) {
 		for (var signedAttribute : attributes) {
+			if (signedAttribute.value() == null) {
+				continue;
+			}
 			for (var modifier : ((EntityAttributeInstanceInvoker) signedAttribute.value())
 					.invokeGetModifiersByOperation(EntityAttributeModifier.Operation.ADDITION)
 			) {
@@ -211,6 +214,9 @@ public class AttributesMod {
 		}
 		double result = initial;
 		for (var signedAttribute : attributes) {
+			if (signedAttribute.value() == null) {
+				continue;
+			}
 			for (var modifier : ((EntityAttributeInstanceInvoker) signedAttribute.value())
 					.invokeGetModifiersByOperation(EntityAttributeModifier.Operation.MULTIPLY_BASE)
 			) {
@@ -222,6 +228,9 @@ public class AttributesMod {
 			}
 		}
 		for (var signedAttribute : attributes) {
+			if (signedAttribute.value() == null) {
+				continue;
+			}
 			for (var modifier : ((EntityAttributeInstanceInvoker) signedAttribute.value())
 					.invokeGetModifiersByOperation(EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
 			) {
@@ -233,6 +242,9 @@ public class AttributesMod {
 			}
 		}
 		for (var signedAttribute : attributes) {
+			if (signedAttribute.value() == null) {
+				continue;
+			}
 			result = signedAttribute.value().getAttribute().clamp(result);
 		}
 		return result;
