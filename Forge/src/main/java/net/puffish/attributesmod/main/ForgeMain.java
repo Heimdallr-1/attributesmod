@@ -73,9 +73,14 @@ public class ForgeMain {
 				addAliasMethod.setAccessible(true);
 
 				var delegate = (ForgeRegistry<?>) delegateField.get(registry);
-				delegate.unfreeze();
+				var locked = delegate.isLocked();
+				if (locked) {
+					delegate.unfreeze();
+				}
 				addAliasMethod.invoke(delegate, aliasId, id);
-				delegate.freeze();
+				if (locked) {
+					delegate.freeze();
+				}
 
 				var holders = holdersField.get(registry);
 				var holdersByName = (Map<Identifier, RegistryEntry.Reference<V>>) holdersByNameField.get(holders);
