@@ -71,13 +71,15 @@ public class ForgeMain {
 				var holdersByNameField = namespacedWrapperClass.getDeclaredField("holdersByName");
 				holdersByNameField.setAccessible(true);
 
-				var addAliasMethod = forgeRegistryClass.getDeclaredMethod("addAlias", Identifier.class, Identifier.class);
-				addAliasMethod.setAccessible(true);
-
 				var delegate = (ForgeRegistry<?>) delegateField.get(registry);
-				delegate.unfreeze();
-				addAliasMethod.invoke(delegate, aliasId, id);
-				delegate.freeze();
+				var locked = delegate.isLocked();
+				if (locked) {
+					delegate.unfreeze();
+				}
+				delegate.addAlias(aliasId, id);
+				if (locked) {
+					delegate.freeze();
+				}
 
 				var holdersByName = (Map<Identifier, RegistryEntry.Reference<V>>) holdersByNameField.get(registry);
 				holdersByName.put(aliasId, holdersByName.get(id));
